@@ -8,6 +8,8 @@ import authRoutes from "./routes/authentication.js";
 import cookieParser from "cookie-parser";
 import cors from 'cors';
 
+const PORT = process.env.PORT || 4000;
+
 const app = express();
 dotenv.config();
 
@@ -36,7 +38,7 @@ app.use((err, req, res, next) => {
     })
 })
 
-app.listen(4000,()=>{
+app.listen(PORT,()=>{
     connect();
     console.log("Connected");
 })
