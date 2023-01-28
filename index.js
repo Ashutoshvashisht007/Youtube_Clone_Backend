@@ -8,10 +8,11 @@ import authRoutes from "./routes/authentication.js";
 import cookieParser from "cookie-parser";
 import cors from 'cors';
 
+dotenv.config();
+
 const PORT = process.env.PORT || 4000;
 
 const app = express();
-dotenv.config();
 
 const connect = () => {
     mongoose.connect(process.env.MONGO).then(()=>{
